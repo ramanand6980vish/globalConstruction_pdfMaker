@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlobalConstruction | PDF Generator</title>
+  <link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">GC</div>
+      <div>
+        <h1>GlobalConstruction</h1>
+        <p>Company Document Generator</p>
+        <p>Manoj Vishwakarma</p>
+      </div>
+      
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+     
+      <p>Enter your content, preview your company document, and download your PDF.</p>
+    </section>
+
+    <div class="workspace">
+      <section class="panel editor-panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Create your document</h3>
+            <p>Paste the text you want to include.</p>
+          </div>
+          <span class="step-badge">01</span>
+        </div>
+
+        <label class="field-label" for="documentText">Document text</label>
+
+        <textarea
+          id="documentText"
+          placeholder="Paste your text here..."
+          rows="12"
+          maxlength="50000"
+        ></textarea>
+
+        <div class="text-meta">
+          <span id="charCount">0 / 50,000 characters</span>
+          <span id="lineCount">0 lines</span>
+        </div>
+
+        <div class="settings-note">
+          <span class="info-icon">i</span>
+          <p>Your GlobalConstruction header is already built in and will appear on every PDF page.</p>
+        </div>
+
+        <div id="statusMessage" class="status-message"
+             role="status" aria-live="polite"></div>
+
+        <button id="generateBtn" class="primary-button" type="button">
+          <span>Generate PDF preview</span>
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <button id="clearBtn" class="secondary-button" type="button">
+          Clear text
+        </button>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Document preview</h3>
+            <p id="previewDescription">Your PDF will appear here.</p>
+          </div>
+          <span class="step-badge">02</span>
+        </div>
+
+        <div id="emptyPreview" class="empty-preview">
+          <div class="empty-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M16 5h22l13 13v41H16z" fill="none"
+                stroke="currentColor" stroke-width="2.5"
+                stroke-linejoin="round"/>
+              <path d="M38 5v14h13M23 32h21M23 40h21M23 48h14"
+                fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4>Your document starts here</h4>
+          <p>Paste your text and select Generate PDF preview.</p>
+        </div>
+
+        <div id="pdfPreviewWrap" class="pdf-preview-wrap" hidden>
+          <iframe id="pdfPreview" title="GlobalConstruction PDF preview"></iframe>
+        </div>
+
+        <div class="preview-footer">
+          <div id="pageInfo" class="page-info">No PDF generated yet</div>
+          <button id="downloadBtn" class="download-button"
+                  type="button" disabled>
+            ↓ Download PDF
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <span>© GlobalConstruction</span>
+      <span>Company Document Generator</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
