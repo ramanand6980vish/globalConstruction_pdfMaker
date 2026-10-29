@@ -3,7 +3,7 @@
 
 const jsPDF = window.jspdf?.jsPDF;
 
-const HEADER_IMAGE_PATH = "assets/globalconstruction-header.png";
+const HEADER_IMAGE_PATH = "https://github.com/ramanand6980vish/globalConstruction_pdfMaker/blob/main/assets/globalconstruction-header.png";
 
 const documentText = document.getElementById("documentText");
 const charCount = document.getElementById("charCount");
